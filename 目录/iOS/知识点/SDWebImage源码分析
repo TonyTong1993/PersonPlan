@@ -1,0 +1,15 @@
+UI分类：
+
+UIButton+WebCache
+UIImage+ForceDecode
+UIImage+GIF
+UIImage+MultiFormat
+UIImageView+WebCache
+UIView+WebCache
+
+
+UIView+WebCacheOperation 管理webCache的load、cancel、remove操作
+知识点：runtime给UIView动态绑定SDOperationsDictionary（注意：NSMapTable类型），
+在get方法中使用@synchronized添加线程锁
+在setImageLoadOperation中 先取消key绑定的操作，通过@synchronized完成向字典添加操作
+

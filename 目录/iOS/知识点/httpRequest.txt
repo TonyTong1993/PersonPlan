@@ -1,0 +1,9 @@
+1. 在 HttpRequestId.h 定义请求 id
+2. 在发请求的对象中注册，如：
+[self registerAsHttpRequestObserver:ON_OFF_DUTY_SIGN_GET_RECORDS cancelExisting:YES];
+3. 在对应的xxxService定义请求方法
+4. 定义请求，如 GetOnOffDutySignRecordsParameter，继承 AHttpRequestParameter
+5. 在 ServiceUrls.h/m 定义请求地址
+6. 发请求 [RequestExecutor executeAsyncPost:[ServiceUrls getOnOffDutySignUrl] parameter:parameter responseListener:[HttpResponseJsonListener newInstance:ONOFFDUTY_REQUEST_ID_ON_OFF_DUTY]];
+7. 在发请求的对象中，实现 -(void)processHttpResponse:(HttpRequestResult *)requestResult
+

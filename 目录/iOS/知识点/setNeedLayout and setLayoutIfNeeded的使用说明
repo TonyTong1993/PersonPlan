@@ -1,0 +1,3 @@
+1.layoutSubViews
+如果想刷新界面不能直接调用layoutSubView，可使用setNeedsLayout，
+如果想马上刷新界面调用LayoutIfNeeded，不一定回调用layoutSubview方法
